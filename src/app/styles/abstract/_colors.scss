@@ -1,0 +1,24 @@
+$navy-dark: #213555;
+$navy-medium: #4f6995;
+$beige-light: #e5d4c4;
+$beige-lighter: #f5ebe4;
+
+:root {
+  --primary: #{$navy-dark};
+  --primary-hover: #{lighten($navy-dark, 10%)};
+  --primary-active: #{darken($navy-dark, 10%)};
+
+  --secondary: #{$navy-medium};
+  --secondary-hover: #{lighten($navy-medium, 10%)};
+  --secondary-active: #{darken($navy-medium, 10%)};
+
+  --accent-light: #{$beige-light};
+  --accent-lighter: #{$beige-lighter};
+
+  --text-primary: #{$navy-dark};
+  --text-secondary: #{$navy-medium};
+  --text-light: #{$beige-light};
+
+  --border-color: #{rgba($navy-dark, 0.1)};
+  --shadow-color: #{rgba($navy-dark, 0.1)};
+}

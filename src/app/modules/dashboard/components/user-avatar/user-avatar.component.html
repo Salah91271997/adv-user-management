@@ -1,0 +1,12 @@
+<div
+  class="user-avatar mb-1"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+  [ngClass]="size"
+>
+  <ng-container *ngIf="imageUrl; else initials">
+    <img [src]="imageUrl" [alt]="name" />
+  </ng-container>
+  <ng-template #initials>
+    {{ getInitials() }}
+  </ng-template>
+</div>

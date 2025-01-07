@@ -1,0 +1,184 @@
+//users-chart.component.scss
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+
+  &.loading {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+  }
+
+  .chart-wrapper {
+    height: 100%;
+    transition: opacity 0.3s ease;
+
+    &.loading {
+      opacity: 0.6;
+    }
+  }
+
+  .legend-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+      }
+
+      .legend-label {
+        font-size: 0.875rem;
+        color: var(--text-color-secondary);
+      }
+    }
+  }
+}
+
+//activity-chart.component.scss
+.distribution-chart {
+  position: relative;
+  height: 300px;
+  margin: 0 auto;
+
+  &.loading {
+    opacity: 0.6;
+  }
+
+  .chart-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .distribution-legend {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: var(--surface-hover);
+      }
+
+      .color-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+      }
+
+      .legend-info {
+        flex: 1;
+
+        .legend-label {
+          font-size: 0.875rem;
+          color: var(--text-color);
+          margin-bottom: 0.25rem;
+        }
+
+        .legend-value {
+          font-size: 0.75rem;
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+  }
+}
+
+//user-avatar.component.scss
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 600;
+  color: var(--surface-0);
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-400));
+
+  &.small {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  &.medium {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  &.large {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  &.with-status {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--surface-card);
+    }
+
+    &.online::after {
+      background-color: var(--green-500);
+    }
+
+    &.offline::after {
+      background-color: var(--gray-500);
+    }
+
+    &.busy::after {
+      background-color: var(--red-500);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+:host::ng-deep {
+  .p-panelmenu-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+
+    .p-panelmenu-header-action {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+  .p-menu {
+    .p-menuitem {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #334155;
+
+      &.p-menuitem-active {
+        background: #f8fafc;
+      }
+
+      .p-menuitem-icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

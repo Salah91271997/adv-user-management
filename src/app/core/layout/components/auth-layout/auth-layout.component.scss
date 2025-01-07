@@ -1,0 +1,12 @@
+.auth-layout {
+  background: var(--primary-color);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-darker) 100%
+  );
+}
+.auth-container {
+  max-width: 450px;
+  margin: 0 auto;
+}

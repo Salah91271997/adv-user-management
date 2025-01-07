@@ -1,0 +1,7 @@
+@function spacing($multiplier) {
+  @return calc(var(--spacing-unit) * #{$multiplier});
+}
+
+@function rem($px) {
+  @return calc($px / 16) * 1rem;
+}

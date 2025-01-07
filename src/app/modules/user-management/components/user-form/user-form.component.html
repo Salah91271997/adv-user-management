@@ -1,0 +1,81 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          pInputText
+          formControlName="username"
+          class="w-full"
+        />
+        <small class="p-error" *ngIf="isFieldInvalid('username')">
+          Username is required
+        </small>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          pInputText
+          formControlName="email"
+          class="w-full"
+        />
+        <small class="p-error" *ngIf="isFieldInvalid('email')">
+          Valid email is required
+        </small>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <label for="role">Role</label>
+        <p-dropdown
+          id="role"
+          [options]="roles"
+          formControlName="role"
+          optionLabel="label"
+          optionValue="value"
+          class="w-full"
+        ></p-dropdown>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <div class="field">
+        <label for="permissions">Permissions</label>
+        <p-multiSelect
+          id="permissions"
+          [options]="permissions"
+          formControlName="permissions"
+          optionLabel="label"
+          optionValue="value"
+          class="w-full"
+        ></p-multiSelect>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="flex justify-content-end gap-2">
+        <button
+          pButton
+          type="button"
+          label="Cancel"
+          class="p-button-text"
+          (click)="onCancel()"
+        ></button>
+        <button
+          pButton
+          type="submit"
+          label="Save"
+          [disabled]="!form.valid"
+        ></button>
+      </div>
+    </div>
+  </div>
+</form>
